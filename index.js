@@ -1,3 +1,4 @@
+// Dependencies
 const backend = require('./backend');
 
 let noteTitle;
