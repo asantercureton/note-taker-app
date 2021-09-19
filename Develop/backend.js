@@ -11,6 +11,36 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json());
 
+fs.readFile('../db/db.json', (err, data) => {
+  if (err) throw err;
+  var notes = JSON.parse(data);
+
+  // GET route for /api/note
+  app.get('/api/notes', (req, res) => {
+    res.json(notes);
+  });
+
+  // POST route for /api/note
+  app.post('/api/notes', (req, res) => {
+    let newNote = req.body;
+    notes.push(newNote);
+    console.log('New note: '+ newNote.title);
+  })
+
+  // Retrieve note with id
+  app.get('/api/notes/:id', (req, res) => {
+    res.json(notes[req.params.id]);
+  });
+
+  // Delete note with id
+  app.delete('/api/note/:id', (req, res) => {
+    notes.splice(req.params.id, 1);
+    console.log("Note deleted with id " + req.params.id);
+  });
+
+})
+
+
 // GET * should return the index.html file.
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/index.html'))
@@ -21,6 +51,7 @@ app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/notes.html'))
 );
 
+// Update the 
 const readFromFile = util.promisify(fs.readFile);
 
 /**
