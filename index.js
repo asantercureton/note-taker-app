@@ -1,5 +1,5 @@
 // Dependencies
-const backend = require('./backend');
+// const server = require('./server');
 
 let noteTitle;
 let noteText;

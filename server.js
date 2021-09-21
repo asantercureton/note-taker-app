@@ -1,7 +1,7 @@
 // Dependencies
 const express = require('express');
 const apiRoute = require('./routes/apiRoutes');
-const htmlRoute = require('./routes/htmlRoutes');
+const htmlRoute = require('./routes/htmlRoute');
 
 // Set up Port
 const PORT = 3001;
@@ -22,4 +22,4 @@ app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
 );
 
-module.exports = backend;
+// module.exports = server;
