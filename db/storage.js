@@ -1,3 +1,5 @@
+// Worked with tutor, Spencer Creer
+
 const fs = require('fs');
 const util = require('util');
 
@@ -24,7 +26,7 @@ class Storage {
         return this.readFile().then(notes => {
             let parseNotes = [];
 
-            parseNotes = [].concat(json.parse(notes));
+            parseNotes = [].concat(JSON.parse(notes));
 
             return parseNotes;
         });
@@ -34,14 +36,12 @@ class Storage {
     saveFile() {
         return this.readFile().then(notes => {
             const newNote = {
-                title,
-                text,
+                title: notes.title,
+                text: notes.text,
                 id: ++this.lastId
             };
 
-            return this.getFile()
-                .then(notes => [...notes, newNote])
-                .then(() => newNote);
+            return this.writeFile([...notes, newNote]);
         });
     }
 
