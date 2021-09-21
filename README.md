@@ -13,6 +13,8 @@ Designed a note taker application using Express.js that allows user to save impo
 
 [Usage](#usage)
 
+[Screenshots](#screenshots)
+
 [License](#license)
 
 
