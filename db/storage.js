@@ -22,11 +22,11 @@ class Storage {
     }
 
     // Get notes within db.json file
-    getFile() {
-        return this.readFile().then(notes => {
+    getNote() {
+        return this.readFile().then(note => {
             let parseNotes = [];
 
-            parseNotes = [].concat(JSON.parse(notes));
+            parseNotes = [].concat(JSON.parse(note));
 
             return parseNotes;
         });
@@ -41,13 +41,13 @@ class Storage {
                 id: ++this.lastId
             };
 
-            return this.writeFile([...notes, newNote]);
+            return this.writeFile([notes, newNote]);
         });
     }
 
     // Delete note within db.json file
-    deleteFile() {
-        return this.getFile()
+    deleteNote() {
+        return this.getNote()
             .then(notes => notes.filter(note => note.id !== parseInt(id)))
             .then(filteredNotes => this.writeFile(filteredNotes));
         

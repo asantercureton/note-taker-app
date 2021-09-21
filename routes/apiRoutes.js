@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 // GET route for /api/note
 router.get('/notes', (req, res) => {
-    storage.getFile().then(notes => res.json(notes));
+    storage.getNote().then(notes => res.json(notes));
 });
 
 // POST route for /api/note
@@ -13,8 +13,8 @@ router.post('/notes', (req, res) => {
 });
 
 // Delete note with id
-router.delete('/note/:id', (req, res) => {
-    storage.deleteFile(req.params.id).then(() => res.json({ ok: true }));
+router.delete('/notes/:id', (req, res) => {
+    storage.deleteNote(req.params.id).then(() => res.json({ ok: true }));
 });
 
 module.exports = router;
