@@ -25,7 +25,7 @@ class Storage {
     getNote() {
         return this.readFile().then(note => {
             let parseNotes = [];
-
+            
             parseNotes = [].concat(JSON.parse(note));
 
             return parseNotes;
@@ -33,7 +33,7 @@ class Storage {
     }
 
     // Save note within db.json file
-    saveFile() {
+    saveNote() {
         return this.readFile().then(notes => {
             const newNote = {
                 title: notes.title,

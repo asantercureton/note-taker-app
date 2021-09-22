@@ -9,7 +9,9 @@ router.get('/notes', (req, res) => {
 
 // POST route for /api/note
 router.post('/notes', (req, res) => {
-    storage.saveFile(req.body).then((note) => res.json(note));
+    storage
+        .saveFile(req.body)
+        .then((notes) => res.json(notes));
 });
 
 // Delete note with id
