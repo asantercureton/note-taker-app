@@ -28,6 +28,7 @@ Designed a note taker application using Express.js that allows user to save impo
 ## Installation
 Run npm install at root directory.
 
+
 ## Instructions
 Run npm start to intiate the note taker application and begin writing notes.
 
