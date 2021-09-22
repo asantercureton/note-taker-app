@@ -23,7 +23,7 @@ Designed a note taker application using Express.js that allows user to save impo
 
 [Video Recording](https://watch.screencastify.com/v/jPW68H8xQCSZNifrLZdp)
 
-[Heroku Link](https://git.heroku.com/aqueous-sea-76360.git)
+[Heroku Link](https://aqueous-sea-76360.herokuapp.com/)
 
 ## Installation
 Run npm install at root directory.
