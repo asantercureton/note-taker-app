@@ -5,9 +5,9 @@ const htmlRoute = require('./routes/htmlRoute');
 
 // Initialize express app
 const app = express();
+
 // Set up Port
 const PORT = process.env.PORT || 3001;
-
 
 // Setting up static public with express
 app.use(express.static('public'));
